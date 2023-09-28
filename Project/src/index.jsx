@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { AddButton } from "styled.jsx";
 import { v4 } from "uuid";
 
 function Home() {
@@ -22,7 +23,7 @@ function Home() {
     <div>
       <h1>Lista de Compras</h1>
       <input type="text" placeholder="Digite um produto..." ref={input} />
-      <button onClick={addProduct}>Adicionar</button>
+      <AddButton onClick={addProduct}>Adicionar</AddButton>
 
       {product.map((item) => (
         <div key={item.id}>
