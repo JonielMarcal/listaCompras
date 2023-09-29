@@ -1,3 +1,14 @@
 *{
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background: radial-gradient(circle at 63.83% 50%, #cdf6ff 0, #90d7ff 25%, #3cb5f2 50%, #0093e6 75%, #0074da 100%);
+    align-items: center;   
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
 }

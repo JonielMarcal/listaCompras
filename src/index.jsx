@@ -1,26 +1,30 @@
 import { useRef, useState } from "react";
-import { AddButton } from "./styled";
 import { v4 } from "uuid";
+import { AddButton, Container } from "./styled";
 
 function Home() {
   const [product, setProduct] = useState([]);
   const input = useRef();
   const addProduct = () => {
-    setProduct([
-      {
-        id: v4(),
-        nome: input.current.value,
-      },
-      ...product,
-    ]);
-    input.current.value = "";
+    if (input.current.value.trim() === "") {
+      alert("Favor, digite um produto!");
+    } else {
+      setProduct([
+        {
+          id: v4(),
+          nome: input.current.value,
+        },
+        ...product,
+      ]);
+      input.current.value = "";
+    }
   };
   const deleteProduct = (id) => {
     setProduct(product.filter((product) => product.id !== id));
   };
 
   return (
-    <div>
+    <Container>
       <h1>Lista de Compras</h1>
       <input type="text" placeholder="Digite um produto..." ref={input} />
       <AddButton onClick={addProduct}>Adicionar</AddButton>
@@ -31,7 +35,7 @@ function Home() {
           <button onClick={() => deleteProduct(item.id)}>🗑️</button>
         </div>
       ))}
-    </div>
+    </Container>
   );
 }
 
