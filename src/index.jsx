@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { v4 } from "uuid";
-import { AddButton, Container } from "./styled";
+import { AddButton, Container, Product, TrashButton } from "./styled";
 
 function Home() {
   const [product, setProduct] = useState([]);
@@ -30,10 +30,10 @@ function Home() {
       <AddButton onClick={addProduct}>Adicionar</AddButton>
 
       {product.map((item) => (
-        <div key={item.id}>
+        <Product key={item.id}>
           <p>{item.nome}</p>
-          <button onClick={() => deleteProduct(item.id)}>🗑️</button>
-        </div>
+          <TrashButton onClick={() => deleteProduct(item.id)}>🗑️</TrashButton>
+        </Product>
       ))}
     </Container>
   );
