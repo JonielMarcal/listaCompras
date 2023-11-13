@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #3df599;
+  background-color: #2ff109;
   padding: 20px;
   border-radius: 10px;
 
@@ -19,10 +19,10 @@ export const Container = styled.div`
   }
 `;
 export const AddButton = styled.button`
-  background: #02d874;
+  background: #05cbe6;
   color: black;
   height: 25px;
-  padding: 5px 10px;
+  padding: 5px 10px;  
   cursor: pointer;
   border: none;
   border-radius: 5px;
